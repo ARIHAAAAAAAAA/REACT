@@ -1,23 +1,25 @@
 import Title from "./Title";
 // import React from 'react'
 
-interface Props{
-    book:{
-        bookName:string;
-        img:string;
-        description:string;
-    }
+interface Book {
+  
+    bookName: string;
+    img: string;
+    description: string;
+  
 }
 
 
-
-export default function Book(props:Props) {
+function Book({bookName,img,description}: Book) {
   return (
-    <div className="book" style={{width:'500px', border:'1px black solid', borderRadius:'15px', margin:'10px'}}>
-        <Title title={props.book.bookName}/>
-        <img src={props.book.img} alt="book" width={500}/>
-        <p>{props.book.description}</p>
-
+    <div style={{border: '1px black solid',borderRadius:'15px',margin:'15px',padding:'10px'}}>
+      < Title text={bookName} size="medium" />
+      <img src={img} alt="book" width={500} />
+      <p>{description}</p>
     </div>
   )
 }
+
+export default Book
+
+

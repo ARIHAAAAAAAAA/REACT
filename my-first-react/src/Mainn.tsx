@@ -1,18 +1,24 @@
-import { Book } from "./App"
-import BookComp from './book'
-// import React from 'react'
-interface Props {
-    books: Book[]
+import Book from "./book"
+
+interface Mainn{
+ books: Book[]
 }
 
-export default function books(props: Props) {
-    const { books } = props
-    return (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-            {books.map((book)=>(
-                <BookComp book ={book}/>
-            ))}
-        </div>
 
-    )
+function Mainn({books}:Mainn) {
+  return (
+   
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {books.map((element)=>{
+          return  <Book bookName={element.bookName}
+            img={element.img}
+            description={element.description}/>
+        })}
+    </div>
+  )
 }
+
+export default Mainn
+
+
+

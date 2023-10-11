@@ -1,19 +1,9 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+// import React from 'react'
+import Header from "./Header "
+import Mainn from "./Mainn";
+import Book from "./book";
+import Footer from "./footer";
 
-
-import './App.css';
-import Header from './Header ';
-import Mainn from './Mainn';
-// import Book from './book';
-import Footer from './footer';
-
-export interface Book{
-  bookName:string;
-  img:string;
-  description:string;
-}
 
 const book1 : Book ={
   bookName: "book 1",
@@ -38,17 +28,57 @@ const book4 : Book ={
 
 const booksArr:Book[] = [book1,book2,book3,book4]
 
-function App() {
+
+
+export default function App() {
   return (
+    <>
+    <Header/>
+    <Mainn books={booksArr}/>
+    <Footer/>
+    </>
     
-      <div>
-        <Header />
-        <Mainn books={booksArr}/>
-        <Footer/>
-      </div>
-    
-  );
+  )
 }
 
-export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import './App.css';
+// import Header from './Header ';
+// import Mainn from './Mainn';
+// // import Book from './book';
+// import Footer from './footer';
+
+// export interface Book{
+//   bookName:string;
+//   img:string;
+//   description:string;
+// }
+
+
+
+// function App() {
+//   return (
+    
+//       <div>
+//         <Header />
+//         <Mainn books={booksArr}/>
+//         <Footer/>
+//       </div>
+    
+//   );
+// }
+
+// export default App;
 
